@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Read</title>
+  <link rel="stylesheet" href="{% static 'css/read.css' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<h1>Art Gallery</h1>
+
+<table class="container">
+	<thead>
+		<tr>
+			<th><h1>ID</h1></th>
+			<th><h1>Title</h1></th>
+			<th><h1>Type</h1></th>
+			<th><h1>For Sale</h1></th>
+    	<th><h1>Quantity</h1></th>
+    	<th><h1>Date</h1></th>
+    	<th><h1>Price</h1></th>
+    	<th><h1>Description</h1></th>
+    	<th><h1>Image</h1></th>
+    	<th><h1>Edit/Delete</h1></th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for art in arts %}
+		<tr>
+			<td>{{art.id}}</td>
+			<td>{{art.title}}</td>
+			<td>
+      
+    	{{art.arttype}}</td>
+			<td>{{art.saleStatus}}</td>
+    	<td>{{art.quantity}}</td>
+			<td>{{art.date}}</td>
+			<td>{{art.price}}</td>
+			<td>{{art.desc}}</td>
+      <td><img src="media/{{art.artImg}}" width=100 ></td>
+      <td>  
+            <a href="/edit/{{ art.id }}"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>  
+            <br>
+            <br>
+            <a href="/delete/{{ art.id }}"><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>  
+        </td>  
+		</tr>
+  {% endfor %}
+	</tbody>
+</table>
+
+<br>
+<br>
+<br>
+<center>  <a href="/create" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add New Record</a></center>  
+
+
+</body>
+</html>
