@@ -71,6 +71,31 @@
         <input type="date" name="date"  value="{{ art.date }}" />       
       </div>
       
+      <div class="form-group">  
+        <label >Add Tags:</label>  
+        
+        <label>
+          <input type="checkbox" name="tags" value="Object" >
+          Object
+        </label>
+        
+        <label>
+          <input type="checkbox" name="tags" value="Human">
+          Human
+        </label>
+
+        <label>
+          <input type="checkbox" name="tags" value="Scenery">
+          Scenery
+        </label>
+
+        <label>
+          <input type="checkbox" name="tags" value="Portrait">
+          Portrait
+        </label>
+      
+      </div>  
+      
       <div class="form-group">
         <label>Description: </label>
         <textarea  name="desc" rows="5" cols="40" >{{ art.desc }}</textarea>       

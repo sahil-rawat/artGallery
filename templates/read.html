@@ -19,6 +19,7 @@
 			<th><h1>For Sale</h1></th>
     	<th><h1>Quantity</h1></th>
     	<th><h1>Date</h1></th>
+    	<th><h1>Tags</h1></th>
     	<th><h1>Price</h1></th>
     	<th><h1>Description</h1></th>
     	<th><h1>Image</h1></th>
@@ -36,6 +37,11 @@
 			<td>{{art.saleStatus}}</td>
     	<td>{{art.quantity}}</td>
 			<td>{{art.date}}</td>
+			<td>{% for tag in art.tags %}
+						{% comment %} {{art.tags}} {% endcomment %}
+						{{tag}}
+					{% endfor %}
+			</td>
 			<td>{{art.price}}</td>
 			<td>{{art.desc}}</td>
       <td><img src="media/{{art.artImg}}" width=100 ></td>

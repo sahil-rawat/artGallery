@@ -10,7 +10,6 @@ class Art(models.Model):
         ('N', 'None')
     )
     
-
     title = models.CharField(db_column='Title', max_length=30)
     arttype = models.CharField(choices=arttype, max_length=10, default="N")
     saleStatus = models.BooleanField(db_column='status')
@@ -19,6 +18,7 @@ class Art(models.Model):
     price = models.FloatField(db_column='Price')
     desc = models.TextField(db_column='Description')
     artImg = models.ImageField(db_column='Art_Img',upload_to='')
+    tags = models.TextField(db_column='tags')
 
     class Meta:
         db_table = 'Art'
