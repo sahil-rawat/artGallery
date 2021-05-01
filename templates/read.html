@@ -37,11 +37,7 @@
 			<td>{{art.saleStatus}}</td>
     	<td>{{art.quantity}}</td>
 			<td>{{art.date}}</td>
-			<td>{% for tag in art.tags %}
-						{% comment %} {{art.tags}} {% endcomment %}
-						{{tag}}
-					{% endfor %}
-			</td>
+			<td>{{art.tags}}</td>
 			<td>{{art.price}}</td>
 			<td>{{art.desc}}</td>
       <td><img src="media/{{art.artImg}}" width=100 ></td>
